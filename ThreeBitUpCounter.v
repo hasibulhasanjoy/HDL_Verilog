@@ -16,13 +16,14 @@ nand(q,w3,qb);
 nand(qb,w4,q,clr);
 endmodule
 
-module threeBitUpCounter(clk,qa,qb,qc);
+module threeBitUpCounter(clk,qa,qb,qc,qd);
 input clk;
-output qa,qb,qc;
+output qa,qb,qc,qd;
 reg j = 1, k =1;
 wire clr;
-wire qab,qbb,qcb;
+wire qab,qbb,qcb,qdb;
 JKFF f1(qa,qab,j,k,clk,clr);
 JKFF f2(qb,qbb,j,k,qa,clr);
 JKFF f3(qc,qcb,j,k,qb,clr);
+JKFF f4(qd,qdb,j,k,qc,clr);
 endmodule 
